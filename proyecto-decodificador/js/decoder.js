@@ -2,30 +2,33 @@ function decryptMessage(encryptedText) {
     const substitutionMap = {
         '?': 'a',
         '[': 'e',
-        '/': 'i',
+        '/': 'l',
         '~': 'o',
         '+': 'u',
         '(': ' ',  
         ')': ' ',  
         '\\': 'í',
         '*': 'p',
-        '#': 'f',
+        '#': 'v',
         '%': 'b',
         '!': 'j',
         '^': 'm',
-        '{': 'l',
+        '{': 's',
         ']': 'n',
-        '¿': 'p',
+        '¿': 'y',
         '$': 'r',
         '}': 'q',
         '@': 's',
         '-': 'h',
-        '¡': 'v',
+        '¡': 'd',
         '=': 't',
         '__': 'z',
         '`': 'c',
+        ';': 'f',
         '¬' : 'ó'
     };
+
+    encryptedText = encryptedText.replace(/__/g, 'z');
 
     return encryptedText.split('').map(char => {
         return substitutionMap[char] || char;
